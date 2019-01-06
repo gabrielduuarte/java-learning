@@ -1,0 +1,204 @@
+For Loop
+When you provide a set of instructions in a method, you might find that a common task is to manipulate an entire set of data. Java conveniently provides control statements to run a task repeatedly. The control statement we will explore is called the for loop.
+
+The for loop repeatedly runs a block of code until a specified condition is met.
+
+The example below shows how a for loop is used:
+
+for (int counter = 0; counter < 5; counter++) {
+
+    System.out.println("The counter value is: " + counter);
+
+}
+The statements within the parentheses of for loop compose the following parts:
+
+Initialization: the int variable named counter is initialized to the value of 0 before the loop is run.
+2. Test condition: the Boolean expression counter < 5 is a conditional statement that is evaluated before the code inside the control statement is run every loop. If the expression evaluates to true, the code in the block will run. Otherwise, if the expression evalutes to false, the for loop will stop running.
+
+3. Increment: Each time the loop completes, the increment statement is run. The statement counter++ increases the value of counter by 1 after each loop.
+
+In the example above, the for loop initially executes the code block in the sample code above because the initial value of counter is less than 5, which passes the test condition.
+
+The value of counter is then incremented by 1 in the increment.
+
+The code block will execute again because counter is still less than 5. This cycle will continue until counter is no longer less than 5.
+
+Please note that similar to the if-then statement, no semicolon is necessary.
+
+--------------------
+
+ArrayList
+Fantastic! For loops will be useful when reading and manipulating Java data structures. Let's talk about a few data structures that are built into Java. The first data structure we will explore is called the ArrayList.
+
+The ArrayList stores a list of data of a specified type. Let's go through an example of how to create, or declare, an ArrayList of type Integer.
+
+ArrayList<Integer> quizGrades = new ArrayList<Integer>();
+ArrayList is a pre-defined Java class. To use it, we must first create an ArrayList object.
+
+In the example above, we create an ArrayList object called quizGrades that will store data types belonging to the <Integer> class (whole numbers).
+
+------------------
+
+ArrayList: Manipulation
+You created an ArrayList in the last exercise to store temperature data, but it does not contain any values yet.
+
+Let's add some values of type Integer to the ArrayList, one by one, like this:
+
+ArrayList<Integer> quizGrades = new ArrayList<Integer>();
+quizGrades.add(95);
+quizGrades.add(87);
+quizGrades.add(83);
+In the example above, we call the add method on quizGrades. The add method adds integers to the ArrayList. The values 95, 87, and 83 are added to the list.
+
+------------------------
+
+ArrayList: Access
+Great! Now we can start accessing the temperatures that our ArrayList stores.
+
+We can access the elements of weeklyTemperatures by using an element's index, or position, in the list.
+
+An element's index refers to its location within an ArrayList. ArrayLists in Java are zero-indexed, which means that the first element in an ArrayList is at a position of 0.
+
+Here is an example of accessing the element in the first position of the list:
+
+ArrayList<Integer> quizGrades = new ArrayList<Integer>();
+quizGrades.add(95);
+quizGrades.add(87);
+quizGrades.add(73);
+
+System.out.println( quizGrades.get(0) );
+The example above will print out the grade value of 95.
+
+The index of the element containing the value 95 is at position 0 in the ArrayList. We access the value by providing its index to the get method.
+
+----------------------
+
+ArrayList: Insertion
+We can also insert new elements into an ArrayList.
+
+To insert new elements into an ArrayList, we can use a slightly different version of the add method that you previously used:
+
+ArrayList<Integer> quizGrades = new ArrayList<Integer>();
+quizGrades.add(95);
+quizGrades.add(87);
+quizGrades.add(73);
+
+quizGrades.add(0, 100);
+System.out.println( quizGrades.get(0) );
+The example above will print out the grade 100.
+
+The add method will insert the grade 100 at the first position (0) into the list. Since it inserts a new element into the beginning of the ArrayList, all other element indices will be shifted one position higher. The grade 95 is now at index 1.
+
+-------------------------
+
+Iterating over an ArrayList
+Earlier in this lesson, we learned about the for loop. Since we've also learned how to retrieve the value at a specific index of an ArrayList, we can now access each of the elements.
+
+for (int i = 0; i < quizGrades.size(); i++) {
+
+    System.out.println( quizGrades.get(i) );
+
+}
+In the example above, the for loop above includes the following statements:
+
+Initialization: int variable i is set to 0 which is the first index of an ArrayList.
+Test condition: the code in the block will run as long as i is less than the size of quizGrades.
+Increment: The code in this block will execute after each loop. In this case,i will increment by 1 with i++ after each loop.
+The size method returns an int that represents how many total elements are stored within quizGrades. The example will print out each element within quizGrades in order. The process of going through each element in the ArrayList is called iteration.
+
+------------------------------
+
+For Each Loop
+Since most for loops are very similar, Java provides a shortcut to reduce the amount of code required to write the loop called the for each loop.
+
+Here is an example of the concise for each loop:
+
+for (Integer grade : quizGrades){
+    System.out.println(grade);
+}
+In the example above, the colon (:) can be read as "in". The for each loop altogether can be read as "for each Integer element (called grade) in quizGrades, print out the value of grade."
+
+The loop will print out the value of each Integer element in quizGrades.
+
+Note: the for each loop does not require a counter.
+
+-----------------------
+
+HashMap
+Great! Another useful built-in data structure in Java is the HashMap.
+
+Although the name of the data structure might not make sense to you immediately, think of it as a real-life dictionary. A dictionary contains a set of words and a definition for each word. A HashMap contains a set of keys and a value for each key.
+
+If we look up a word in a dictionary, we can get the definition. If you provide a HashMap with a key that exists, you can retrieve the value associated with the key.
+
+Declaring a HashMap is shown in the following example:
+
+HashMap<String, Integer> myFriends = new HashMap<String, Integer>();
+In the example above, we create a HashMap object called myFriends. The myFriends HashMap will store keys of String data types and values of type Integer.
+
+Note: the String object allows you to store multiple characters, such as a word in quotations (e.g. "Rats!").
+
+--------------------------
+
+HashMap: Manipulation
+Perfect! Now let's fill the HashMap with useful data.
+
+Add keys and values to a HashMap:
+
+HashMap<String, Integer> myFriends = new HashMap<String, Integer>();
+
+myFriends.put("Mark", 24);
+myFriends.put("Cassandra", 25);
+myFriends.put("Zenas", 21);
+In the example above, we used the put method to add a String key and an associated Integer value. The String key is the text inside double quotes " ". The Integer value is represented by the number.
+
+----------------------
+
+HashMap: Access
+To access data in an ArrayList, we specified the index. In order to access a value in a HashMap, we specify the key:
+
+HashMap<String, Integer> myFriends = new HashMap<String, Integer>();
+
+myFriends.put("Mark", 24);
+myFriends.put("Cassandra", 25);
+myFriends.put("Zenas", 21);
+
+System.out.println( myFriends.get("Zenas") );
+In the example above, we call the get method on the myFriends HashMap using the key "Zenas". The console will print the value associated with "Zenas" which is 21.
+
+-----------------------
+
+Iterating over a HashMap
+We can also access properties of a HashMap, such as the number of entries or the contents of the HashMap.
+
+Let's access the length and print out the contents of the myFriends:
+
+HashMap<String, Integer> myFriends = new HashMap<String, Integer>();
+
+myFriends.put("Mark", 24);
+myFriends.put("Cassandra", 25);
+myFriends.put("Zenas", 21);
+
+System.out.println( myFriends.size() );
+
+for (String name: myFriends.keySet()) {
+
+    System.out.println(name + " is age: " + myFriends.get(name));
+
+}
+In the example above, the size method of HashMap prints out the size of the myFriends instance. As a result, the console prints out 3 since there are 3 key-value pairs.
+
+Next, we use a for each loop to iterate over each key in myFriends. The keySet method of HashMap returns a list of keys.
+
+Inside the loop, we access the current key name and use the get method of HashMap to access the value. The console will print out the names and ages of each of my friends.
+
+--------------------------
+
+Generalizations
+Great work! What did we learn so far?
+
+For Loops: used to repeatedly run a block of code
+For Each Loops: a concise version of a for loop
+ArrayList: stores a list of data
+HashMap: stores keys and associated values like a dictionary
+
